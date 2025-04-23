@@ -8,11 +8,12 @@ And name the container using class
 And in the container we have to define elements based on requirement
 
 And then CSS file 
-Take * for resetting the properties
-Then root {}
+Take * for resetting the properties initially
+Then root {}, we can define few values and use further
+
 Then take body then container then individual elements
 
-Then finally come to javascript file
+Then finally come to javascript file:
 
 Create an empty array named tasks
 let tasks = [];
