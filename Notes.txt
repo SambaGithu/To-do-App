@@ -1,0 +1,26 @@
+Process:
+
+
+HTML File:
+
+First take html file and then divide webpage into containers
+And name the container using class
+And in the container we have to define elements based on requirement
+
+And then CSS file 
+Take * for resetting the properties
+Then root {}
+Then take body then container then individual elements
+
+Then finally come to javascript file
+
+Create an empty array named tasks
+let tasks = [];
+Then added the task to the tasks array using addTask function
+But we have update the task to page, using updateTaskList function
+We called UpdateTaskList function in addTask function, because once we added the task we have to update it to page
+
+But before addTask and updateTaskList, we have to click + button.
+After clicking + button we have to call addTask and updateTaskList
+Generally for button it has default behavior so we have to prevent that (using eventListener) and call addTask method
+

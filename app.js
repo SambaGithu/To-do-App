@@ -1,4 +1,7 @@
 
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const storedTasks = JSON.parse("tasks");
   if (storedTasks) {
@@ -9,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
+// Create an empty array to store tasks
 
 let tasks = [];
 
@@ -26,12 +29,44 @@ const addTask = () => {
   const text = taskInput.value.trim();
   if (text) {
     tasks.push({ text: text, completed: false });
+    //console.log(tasks);
     updateTasksList();
     updateStats();
     saveTasks();
   }
   console.log(tasks);
 };
+
+
+const updateTasksList = () => {
+  const taskList = document.getElementById("task-list");
+  taskList.innerHTML = "";
+  tasks.forEach((task, index) => {
+    const listItems = document.createElement("li");
+    listItems.innerHTML = `
+        <div class="taskItem">
+                <div class="task ${task.completed ? "completed" : ""}">
+                    <input type="checkbox" class="checkbox" ${
+                      task.completed ? "checked" : ""
+                    }/>
+                    <p>${task.text}</p>
+                </div>
+                <div class='icons'>
+                <img src="./edit.png" onClick="editTask(${index})" />
+                <img src="./bin.png" onClick="deleteTask(${index})" />
+                </div>
+        </div>
+        `;
+    listItems.addEventListener("change", () => toggleTaskComplete(index));
+    taskList.append(listItems);
+  });
+};
+
+document.getElementById("newTask").addEventListener("click", function (e) {
+  e.preventDefault();
+  addTask();
+});
+
 
 
 const toggleTaskComplete = (index) => {
@@ -75,34 +110,7 @@ const updateStats = () => {
 
 
 
-const updateTasksList = () => {
-  const taskList = document.getElementById("task-list");
-  taskList.innerHTML = "";
-  tasks.forEach((task, index) => {
-    const listItems = document.createElement("li");
-    listItems.innerHTML = `
-        <div class="taskItem">
-                <div class="task ${task.completed ? "completed" : ""}">
-                    <input type="checkbox" class="checkbox" ${
-                      task.completed ? "checked" : ""
-                    }/>
-                    <p>${task.text}</p>
-                </div>
-                <div class='icons'>
-                <img src="./edit.png" onClick="editTask(${index})" />
-                <img src="./bin.png" onClick="deleteTask(${index})" />
-                </div>
-        </div>
-        `;
-    listItems.addEventListener("change", () => toggleTaskComplete(index));
-    taskList.append(listItems);
-  });
-};
 
-document.getElementById("newTask").addEventListener("click", function (e) {
-  e.preventDefault();
-  addTask();
-});
 
 
 const blastConfetti = ()=> {

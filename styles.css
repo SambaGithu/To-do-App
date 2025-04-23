@@ -1,9 +1,13 @@
+
+
+/* This will reset the default styles of all elements to 0 */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
+/*This root element allows us to define few variables we can use further*/
 :root{
     --background:#000430;
     --secondaryBackground:#171c48;
@@ -12,10 +16,14 @@
     --teal:#24feee;
 
 }
+/*This body element will take care of body of the webpage*/
 body{
     background-color: var(--background);
     color:var(--text);
 }
+
+/*This is the main container of the webpage and we gave few properties to it*/
+/*Here we used flex box properties and some generic CSS properties*/
 .container{
    
     display:flex;
