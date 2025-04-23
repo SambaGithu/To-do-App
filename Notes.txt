@@ -25,3 +25,18 @@ But before addTask and updateTaskList, we have to click + button.
 After clicking + button we have to call addTask and updateTaskList
 Generally for button it has default behavior so we have to prevent that (using eventListener) and call addTask method
 
+If we describe javascript file the process will be like
+
+We have coded one functionality that is when we are entering text in the input box 
+and click on + button, task element need to be added at the bottom, if we add 10 tasks
+10 task elelments needs to be added and 
+it should contain one checkbox and text what we have entered in the textbox and 
+one edit button and delete button.
+If we click  on check box progress should be reflected based on the ratio
+and when we click on edit element task element will be removed and the text from the task element
+will be moved to input text box we used to enter task text
+Then once we click on delete button task will be removed and progress will be updated
+Finally once we complete all the listed tasks it should blast confetti.
+
+
+Finaly try to get in to code and try to decode.
